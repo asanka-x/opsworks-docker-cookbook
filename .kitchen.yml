@@ -13,3 +13,11 @@ suites:
     run_list:
       - recipe[docker::default]
     attributes:
+  - name: install
+      run_list:
+        - recipe[docker::install]
+      attributes:
+  - name: docker-deploy
+      run_list:
+        - recipe[docker::docker-deploy]
+      attributes:
